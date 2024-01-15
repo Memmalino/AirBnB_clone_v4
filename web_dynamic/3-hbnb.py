@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This script sets up a Flask web application with a specific
+""" This module sets up a Flask web application with a specific
     route (/3-hbnb) and renders the 3-hbnb.html template """
 from models import storage
 from models.state import State
