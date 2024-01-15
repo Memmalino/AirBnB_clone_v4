@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ This script sets up a Flask web application with a specific
-    route (/4-hbnb) and renders the 0-hbnb.html template """
+    route (/100-hbnb) and renders the 100-hbnb.html template """
 from models import storage
 from models.state import State
 from models.city import City
@@ -18,9 +18,9 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/4-hbnb', strict_slashes=False)
+@app.route('/100-hbnb', strict_slashes=False)
 def render_hbnb_page():
-    """ This retieves data from database and displays them  """
+    """ This retieves data from database and displays them """
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     s_ct = []
@@ -31,10 +31,10 @@ def render_hbnb_page():
     amenities = storage.all(Amenity).values()
     amenities = sorted(amenities, key=lambda k: k.name)
 
-    all_places = storage.all(Place).values()
-    all_places = sorted(all_places, key=lambda k: k.name)
+   all_places = storage.all(Place).values()
+   all_places = sorted(all_places, key=lambda k: k.name)
 
-    return render_template('4-hbnb.html',
+    return render_template('100-hbnb.html',
                            states=s_ct,
                            amenities=amenities,
                            places=all_places,
