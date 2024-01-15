@@ -31,8 +31,8 @@ def render_hbnb_page():
     amenities = storage.all(Amenity).values()
     amenities = sorted(amenities, key=lambda k: k.name)
 
-   all_places = storage.all(Place).values()
-   all_places = sorted(all_places, key=lambda k: k.name)
+    all_places = storage.all(Place).values()
+    all_places = sorted(all_places, key=lambda k: k.name)
 
     return render_template('100-hbnb.html',
                            states=s_ct,
